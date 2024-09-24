@@ -162,3 +162,59 @@ Gerenciamento na nuvem:
 - Usando uma interface de linha de comando.
 - Usando APIs.
 - Usando o PowerShell
+
+## Disponibilidade em máquinas virtuais e armazenamento
+
+  Ao criar uma máquina virtual, temos algumas opções para manter a disponibilidade desse serviço, isso envolve algumas estratégias e o SLA.
+
+### SLA e o tempo de inatividade
+
+Informações obtidas através do Bootcamp XP Fullstack na DIO:
+
+- 99% => 1.68h de inatividade por semana , 7.2h por mês e 3.65dias por ano.
+- 99.95% => 10.1 minutos por semana, 43.2min por mês e 8.76h por ano;
+- 99.95% => 5 minutos por semana, 21.6min por mês e 4.38h por ano;
+- 99.99% => 1.01 minutos por semana, 4.32 por mês e 52.56min por ano;
+- 99.999% => 6 segundos por semana, 25.9segundos por mês e 5.26min por ano;
+
+A porcentagem depende do SLA, por isso é importante saber o tempo de inatividade aceitável para o serviço desejado e futuros planejamentos na área de arquitetura de sistemas.
+
+### Opções de disponibilidade
+
+As zonas de disponibilidade expandem o nível de controle necessário para manter a disponibilidade dos aplicativos e dados em suas VMs. Pode proteger os aplicativos e dados de interrupções de data centers e eventos de manutenção.
+
+- Nenhuma redundância infraestrutura necessária
+- Zona de disponibilidade - separa fisicamente seus recursos em uma região
+- Conjunto de dimensionamento de máquinas virtuais - distribui Vms entre zonas e domínios de falha em escala
+- Conjunto de disponibilidade - distribui Vms automaticamente entre vários domínios de falha
+
+### Zona de disponibilidades
+
+Uma Zona de Disponibilidade é uma zona fisicamente separada, dentro de uma região do Azure. Há três zonas de disponibilidade por região do Azure com suporte.
+Ao escolher fazer isso, o disco gerenciado e o IP público (caso tenha um) serão criados na mesma zona de disponibilidade da máquina virtual.
+
+Cada Zona de Disponibilidade tem uma fonte de energia, uma rede e um sistema de refrigeração distintos. Ao projetar suas soluções para usar VMs replicadas em zonas, você pode proteger seus aplicativos e dados contra a perda de um data center. Se uma zona estiver comprometida, os aplicativos e dados replicados estarão instantaneamente disponíveis em outra zona.
+
+### Redundância de armazenamento
+
+Criar contas de armazenamento também afeta na disponibilidade de dados e temos opções de redundância que são: LRS, GRS, ZRS e GZRS.
+
+#### Armazenamento com redundância local (LRS)
+
+Esta opção tem custo mais baixo, com proteção básica contra falhas de drive e de rack do servidor, mas não é recomendada para aplicativos que exigem alta disponibilidade ou durabilidade.
+O LRS copia dados de forma síncrona três vezes em um único local físico na região primária. Recomendada para cenários não críticos.
+
+#### Armazenamento com redundância geográfica (GRS)
+
+Opção intermediária com funcionalidades de failover em uma região secundária. Recomendada para cenários de backup. GRS copia seus dados de forma síncrona três vezes em um único local físico na região primária usando o LRS, e depois copia seus dados de forma assíncrona para um único local físico em uma região secundária.
+
+Failover é uma técnica de recuperação de desastres que permite que sistemas e redes continuem a funcionar mesmo quando há falhas ou interrupções. Ela funciona de forma automática, transferindo a operação de um sistema ou componente para um  backup ou standby.
+
+#### Armazenamento com redundância de zona (ZRS)
+
+O ZRS é recomendado para aplicativos que exigem alta disponibilidade, como clustering para cargas de trabalho SAP e SQL Server, aplicativos de contêiner e aplicativos herdados. É uma opção intermediária com proteção contra falhas no nível do data center.
+Ele replica a conta de armazenamento de modo síncrono em três zonas de disponibilidade do Azure na região primária. Cada zona é um local físico separado.
+
+#### Armazenamento com redundância de zona geográfica (GZRS)
+
+Solução de proteção de dados ideal que inclui as redundância entre zonas e proteção contra interrupções regionais fornecidas pela replicação geográfica. Recomendada para cenários de dados críticos.
