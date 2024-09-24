@@ -76,11 +76,6 @@ Os provedores de serviços em nuvem operam em um modelo baseado no consumo, o qu
 - São fornecidos preços para recursos e serviços individuais
 - A cobrança é feita com base no seu uso real.
 
-## Responsabilidade compartilhada
-
-Na nuvem privada tudo é de responsabilidade das organizações.
-Na nuvem pública em geral, o fornecedor de nuvem é responsável pela segurança da infraestrutura, enquanto o cliente é responsável pela segurança das áreas da infraestrutura de nuvem sobre as quais tem controle. As responsabilidades da carga de trabalho variam dependendo se a carga de trabalho está hospedada no SaaS (software como serviço), na PaaS (plataforma como serviço), na IaaS (infraestrutura como serviço) ou em um data center local.
-
 ## Serviços do Microsoft Azure
 
 - A conta gratuita pode ter limitações de disponibilidade de serviços/recursos.
@@ -237,9 +232,14 @@ Software como serviço permite se conectar e usar aplicativos baseados em nuvem 
 
 ## Modelo de responsabilidade compartilhada
 
-No modelo on-premise, o servidor é físico, ou seja toda a responsabilidade torna-se do cliente ou empresa que a detém:
+Na nuvem privada ou modelo on-premise, o servidor é físico, ou seja toda a responsabilidade torna-se do cliente ou empresa que a detém.
+
+Na nuvem pública em geral, o fornecedor de nuvem é responsável pela segurança da infraestrutura, enquanto o cliente é responsável pela segurança das áreas da infraestrutura de nuvem sobre as quais tem controle. As responsabilidades da carga de trabalho variam dependendo se a carga de trabalho está hospedada no SaaS (software como serviço), na PaaS (plataforma como serviço), na IaaS (infraestrutura como serviço) ou em um data center local.
+
 No modelo IaaS, os provedores são responsáveis pelo data center físico, a rede física e os hosts físicos. O resto é de responsabilidade do cliente.
+
 No modelo PaaS, responsabilidades como cuidados com controle de rede, aplicativos e infraestrutura de identidade e diretório são do provedor e do cliente.
+
 No modelo SaaS, as responsabilidades do cliente são sobre as informações e dados, dispositivos, contas e identidades, e em partes da infraestrutura de identidade e diretório.
 
 [Modelo de Responsabilidade Compartilhada](./responsabilidade_compartilhada.png)
