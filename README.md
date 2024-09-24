@@ -174,7 +174,7 @@ Informações obtidas através do Bootcamp XP Fullstack na DIO:
 - 99% => 1.68h de inatividade por semana , 7.2h por mês e 3.65dias por ano.
 - 99.95% => 10.1 minutos por semana, 43.2min por mês e 8.76h por ano;
 - 99.95% => 5 minutos por semana, 21.6min por mês e 4.38h por ano;
-- 99.99% => 1.01 minutos por semana, 4.32 por mês e 52.56min por ano;
+- 99.99% => 1.01 minutos por semana, 4.32min por mês e 52.56min por ano;
 - 99.999% => 6 segundos por semana, 25.9segundos por mês e 5.26min por ano;
 
 A porcentagem depende do SLA, por isso é importante saber o tempo de inatividade aceitável para o serviço desejado e futuros planejamentos na área de arquitetura de sistemas.
@@ -218,3 +218,62 @@ Ele replica a conta de armazenamento de modo síncrono em três zonas de disponi
 #### Armazenamento com redundância de zona geográfica (GZRS)
 
 Solução de proteção de dados ideal que inclui as redundância entre zonas e proteção contra interrupções regionais fornecidas pela replicação geográfica. Recomendada para cenários de dados críticos.
+
+## Tipos de Serviços de Nuvem na Azure
+
+Não apenas na Azure, como em todos os outros serviços em nuvem, existem três modelos:
+
+### IaaS
+
+Infraestrutura como serviço - dispõe sob demanda de recursos de computação altamente escalonáveis como serviços pela internet. Ela elimina a necessidade de as empresas adquirirem, configurarem ou gerenciarem infraestrutura. É o mais utilizado e o que mais precisa ser configurado em questões de servidores, armazenamento, segurança, monitoramento, backup.
+
+### PaaS
+
+Plataforma como serviços - fornece um ambiente para a criação, o teste e a implantação de aplicativos de software, com recursos que permitem oferecer desde aplicativos simples baseados em nuvem até sofisticados aplicativos empresariais sem focar no gerenciamento da infraestrutura subjacente.
+
+### SaaS
+
+Software como serviço permite se conectar e usar aplicativos baseados em nuvem pela internet; são os apps hospedados.Exemplos comuns são email, calendário e ferramentas do office. Possui configurações mais básicas e está baseado em recursos determinados na licença de serviço.
+
+## Modelo de responsabilidade compartilhada
+
+No modelo on-premise, o servidor é físico, ou seja toda a responsabilidade torna-se do cliente ou empresa que a detém:
+No modelo IaaS, os provedores são responsáveis pelo data center físico, a rede física e os hosts físicos. O resto é de responsabilidade do cliente.
+No modelo PaaS, responsabilidades como cuidados com controle de rede, aplicativos e infraestrutura de identidade e diretório são do provedor e do cliente.
+No modelo SaaS, as responsabilidades do cliente são sobre as informações e dados, dispositivos, contas e identidades, e em partes da infraestrutura de identidade e diretório.
+
+[Modelo de Responsabilidade Compartilhada](./responsabilidade_compartilhada.png)
+
+## Comparação do serviço de nuvem
+
+IaaS é mais flexível, você configura e gerencia o hardware para seu aplicativo. Citando Stan Lee, Com grandes poderes vêm grandes responsabilidades.
+
+PaaS focado no desenvolvimento de aplicativos e banco de dados, o gerenciamento de plataforma é realizado pelo provedor de nuvem.
+
+SaaS ressalta o modelo de preço de pagamento conforme uso, os usuários pagam pelo software que utilizam em um modelo de assinatura.
+
+## Máquina virtual
+
+Na categoria máquina virtual, é possível visualizar a grande quantidade de detalhes de configurações na criação e ao selecionar uma imagem, a opção de tamanho já fornece uma previsão de custo. Além da estrutura básicas da VM, ainda há a aba para configurações de discos, rede, gerenciamento, monitoramento, configurações avançadas, marcas, revisão e por fim, criação da VM.
+
+## Configurando uma Instância de Banco de Dados
+
+Usando o portal da Microsoft Azure, nas categorias, selecionamos Banco de Dados SQL.
+
+- Selecionar a assinatura para gerenciar custos e os recursos implantados
+- Selecionar grupo de recursos (pastas para organizar e gerenciar recursos)
+- Informamos o nome do banco de dados
+- Selecionamos o servidor ou criamos um novo caso não tenhamos nenhum
+
+- Configuramos o servidor (mesmo sendo simbólico, pois não teremos acesso a ele pelo BD)
+  - Informamos o nome do servidor
+  - Selecionamos a localização do servidor
+  - Selecionamos o método de autenticação do servidor
+  - Definimos administrador do Microsoft Entra
+
+- Selecione se deseja usar pool elástico SQL
+- Selecione o ambiente de carga de trabalho
+- Configura parte de computação + armazenamento (ex: 32gb de armazenamento, uso geral sem servidor)
+- Seleciona a redundância do armazenamento de backup.
+
+Por fim, uma previsão de custo estimado de armazenamento mensal será exibida.
