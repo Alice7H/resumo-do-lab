@@ -260,8 +260,8 @@ Na categoria máquina virtual, é possível visualizar a grande quantidade de de
 
 Usando o portal da Microsoft Azure, nas categorias, selecionamos Banco de Dados SQL.
 
-- Selecionar a assinatura para gerenciar custos e os recursos implantados
-- Selecionar grupo de recursos (pastas para organizar e gerenciar recursos)
+- Selecionamos a assinatura para gerenciar custos e os recursos implantados
+- Selecionamos grupo de recursos (pastas para organizar e gerenciar recursos)
 - Informamos o nome do banco de dados
 - Selecionamos o servidor ou criamos um novo caso não tenhamos nenhum
 
@@ -271,9 +271,9 @@ Usando o portal da Microsoft Azure, nas categorias, selecionamos Banco de Dados 
   - Selecionamos o método de autenticação do servidor
   - Definimos administrador do Microsoft Entra
 
-- Selecione se deseja usar pool elástico SQL
-- Selecione o ambiente de carga de trabalho
-- Configura parte de computação + armazenamento (ex: 32gb de armazenamento, uso geral sem servidor)
-- Seleciona a redundância do armazenamento de backup.
+- Deixamos como não selecionado a opção se deseja usar pool elástico SQL
+- Selecionamos o ambiente de carga de trabalho como Desenvolvimento
+- Configuramos a parte de computação + armazenamento em 32gb de armazenamento, uso geral sem servidor.
+- Selecionamos a redundância do armazenamento de backup como a redundância geográfica.
 
 Por fim, uma previsão de custo estimado de armazenamento mensal será exibida.
